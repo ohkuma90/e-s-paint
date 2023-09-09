@@ -22,3 +22,50 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# テーブル設計
+
+## usersテーブル
+
+| Column             | Type   | Options                    |
+| ------------------ | ------ | -------------------------- |
+| name               | string | null: false                |
+| email              | string | null: false , unique: true |
+| encrypted_password | string | null: false                |
+
+### Association
+
+- has_many :stocks
+
+
+## stocksテーブル
+
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| p_name           | string  | null: false |
+| category         | string  | null: false |
+| color            | string  | null: false |
+| gloss            | string  | null: false |
+| remaining_in_can | integer | null: false |
+| amount           | integer | null: false |
+| standard         | integer | null: false |
+| remarks          | text    | null: false |
+
+### Association
+
+- belongs_to :user
+- belongs_to :p_information
+
+
+## p_information テーブル
+
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| p_name           | string  | null: false |
+| category         | string  | null: false |
+| amount           | integer | null: false |
+| standard         | integer | null: false |
+
+### Association
+
+- has_many :stocks
