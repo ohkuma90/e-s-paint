@@ -74,3 +74,4 @@ end
 gem 'bootstrap', '~> 5.2.3'
 gem 'mini_racer'
 gem 'jquery-rails'
+gem 'devise'
