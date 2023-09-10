@@ -8,7 +8,7 @@ development:
   username: root
   password:
   host: localhost
-  database: e-s-paint_development
+  database: e_s_paint_development
 
 test:
   <<: *default
@@ -16,7 +16,7 @@ test:
   username: root
   password:
   host: localhost
-  database: e-s-paint_test
+  database: e_s_paint_test
 
 production:
   <<: *default
