@@ -14,26 +14,30 @@
     <%# Nav bar部分 %>
     <nav class="navbar navbar-expand-md navbar-light bg-dark py-3 d-flex">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <h2 class= "text-white pt-1">Eazy Stock Paint</h2>
-        </a>
+        <%= link_to "Eazy Stock Paint", root_path, class: "nav-link text-white pt-1 fs-5" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">ログイン</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">新規登録</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ログアウト</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">在庫追加</a>
-            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <h3 class="nav-link mt-1"><%= current_user.name %>でログイン中</h3>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link"%>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">在庫追加</a>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
