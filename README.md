@@ -40,16 +40,17 @@ Things you may want to cover:
 
 ## stocksテーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| p_name           | string  | null: false |
-| category         | string  | null: false |
-| color            | string  | null: false |
-| gloss            | string  | null: false |
-| remaining_in_can | integer | null: false |
-| amount           | integer | null: false |
-| standard         | integer | null: false |
-| remarks          | text    | null: false |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| p_name           | string     | null: false                    |
+| category         | string     | null: false                    |
+| color            | string     |                                |
+| gloss            | string     |                                |
+| remaining_in_can | integer    | null: false                    |
+| amount           | integer    | null: false                    |
+| standard         | integer    | null: false                    |
+| remarks          | text       |                                |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 
