@@ -5,11 +5,11 @@
       <%= form_with model: @stock, data:{turbo: false}, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object, locals: { message: @message } %>
         <div class="mb-3">
-          <p class="form-label"> 塗料名 </p>
+          <p class="form-label"> 塗料名 <span class="text-danger">(必須)</span></p>
           <%= f.text_field :p_name, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <p class="form-label"> カテゴリー </p>
+          <p class="form-label"> カテゴリー <span class="text-danger">(必須)</span></p>
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown"}) %>
         </div>
         <div class="mb-3">
@@ -21,15 +21,15 @@
           <%= f.text_field :gloss, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <p class="form-label"> 総重量（缶を含む[kg]） </p>
+          <p class="form-label"> 総重量（缶を含む[kg]） <span class="text-danger">(必須)</span></p>
           <%= f.text_field :remaining_in_can, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <p class="form-label"> 標準塗布量 </p>
+          <p class="form-label"> 標準塗布量 [kg/m<sup>2</sup>/回] <span class="text-danger">(必須)</span></p>
           <%= f.text_field :amount, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <p class="form-label">規格 </p>
+          <p class="form-label">規格 <span class="text-danger">(必須)</span></p>
           <%= f.collection_select(:standard_id, Standard.all, :id, :name, {}, {class:"form-control", id:"dropdown"}) %>
         </div>
         <div class="mb-3">
