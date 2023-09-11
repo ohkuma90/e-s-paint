@@ -43,7 +43,7 @@ Things you may want to cover:
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | p_name           | string     | null: false                    |
-| category         | string     | null: false                    |
+| category         | integer    | null: false                    |
 | color            | string     |                                |
 | gloss            | string     |                                |
 | remaining_in_can | integer    | null: false                    |
