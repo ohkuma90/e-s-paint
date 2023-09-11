@@ -43,12 +43,12 @@ Things you may want to cover:
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | p_name           | string     | null: false                    |
-| category         | integer    | null: false                    |
+| category_id      | integer    | null: false                    |
 | color            | string     |                                |
 | gloss            | string     |                                |
 | remaining_in_can | integer    | null: false                    |
 | amount           | integer    | null: false                    |
-| standard         | integer    | null: false                    |
+| standard_id      | integer    | null: false                    |
 | remarks          | text       |                                |
 | user             | references | null: false, foreign_key: true |
 
