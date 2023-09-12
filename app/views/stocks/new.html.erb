@@ -22,11 +22,11 @@
         </div>
         <div class="mb-3">
           <p class="form-label"> 総重量（缶を含む[kg]） <span class="text-danger">(必須)</span></p>
-          <%= f.text_field :remaining_in_can, class: "form-control" %>
+          <%= f.text_field :remaining_in_can, class: "form-control", placeholder: "半角数字で入力ください　例)11.5"%>
         </div>
         <div class="mb-3">
           <p class="form-label"> 標準塗布量 [kg/m<sup>2</sup>/回] <span class="text-danger">(必須)</span></p>
-          <%= f.text_field :amount, class: "form-control" %>
+          <%= f.text_field :amount, class: "form-control", placeholder: "半角数字で入力ください　例)0.15" %>
         </div>
         <div class="mb-3">
           <p class="form-label">規格 <span class="text-danger">(必須)</span></p>
@@ -34,7 +34,7 @@
         </div>
         <div class="mb-3">
           <p class="form-label"> 備考 </p>
-          <%= f.text_field :remarks, class: "form-control" %>
+          <%= f.text_field :remarks, class: "form-control", placeholder: "例)〇〇様邸使用予定" %>
         </div>
         <%= f.submit "追加する", class: "btn btn-primary" %>
       <% end %>
