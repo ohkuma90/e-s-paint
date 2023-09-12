@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <h2>在庫追加</h2>
+      <select id="pInformationSelect">
+      <option value="">製品を選択してください</option>
+      <% @p_informations.each do |p_information| %>
+        <option value="<%= p_information.id %>"><%= p_information.p_name %></option>
+      <% end %>
+    </select>
       <%= form_with model: @stock, data:{turbo: false}, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object, locals: { message: @message } %>
         <div class="mb-3">
