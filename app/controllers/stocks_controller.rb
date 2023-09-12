@@ -1,6 +1,11 @@
 class StocksController < ApplicationController
 
   def index
+    @stocks = current_user.stocks
+    @stocks.each do |stock|
+      stock.remaining = (stock.remaining_in_can - 1.14).round(2)
+      stock.applicable_area = (stock.remaining / stock.amount).round(2)
+    end
   end
   
   def new
