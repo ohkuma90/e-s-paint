@@ -13,27 +13,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">ハイペイント</th>
-        <td>上塗り：溶剤系</td>
-        <td>NT-11</td>
-        <td>艶あり</td>
-        <td>9.5</td>
-        <td>0.13</td>
-        <td>［第4類第2石油類］</td>
-        <td>〇〇邸使用予定</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      <% @stocks.each do |stock| %>
+        <tr>
+          <th scope="row"><%= stock.p_name %></th>
+          <td><%= stock.category.name %></td>
+          <td><%= stock.color %></td>
+          <td><%= stock.gloss %></td>
+          <td><%= stock.remaining %></td>
+          <td><%= stock.applicable_area %></td>
+          <td><%= stock.category.name %></td>
+          <td><%= stock.remarks %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
