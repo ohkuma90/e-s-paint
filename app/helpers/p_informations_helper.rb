@@ -1,0 +1,2 @@
+module PInformationsHelper
+end

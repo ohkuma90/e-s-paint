@@ -30,6 +30,9 @@
               <li class="nav-stock">
                 <%= link_to "在庫追加", new_stock_path, class: "nav-link" %>
               </li>
+              <li class="nav-stock">
+                <%= link_to "製品情報追加", new_p_information_path, class: "nav-link" %>
+              </li>
             <% else %>
               <li class="nav-stock">
                 <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>

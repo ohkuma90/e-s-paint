@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 30}
 
   has_many :stocks
+  has_many :p_informations
 end
