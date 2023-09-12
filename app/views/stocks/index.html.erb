@@ -3,11 +3,12 @@
     <thead>
       <tr>
         <th scope="col">製品名</th>
+        <th scope="col">入庫日</th>
         <th scope="col">カテゴリー</th>
         <th scope="col">色相</th>
         <th scope="col">光沢</th>
-        <th scope="col">残量 (缶を除く[kg])</th>
-        <th scope="col">塗布可能面積</th>
+        <th scope="col">残量　(缶を除く[kg])</th>
+        <th scope="col">塗布可能面積　[m<sup>2</sup>]</th>
         <th scope="col">規格</th>
         <th scope="col">備考</th>
       </tr>
@@ -16,11 +17,12 @@
       <% @stocks.each do |stock| %>
         <tr>
           <th scope="row"><%= stock.p_name %></th>
+          <td><%= stock.created_at.to_date %></td>
           <td><%= stock.category.name %></td>
           <td><%= stock.color %></td>
           <td><%= stock.gloss %></td>
           <td><%= stock.remaining %></td>
-          <td><%= stock.applicable_area %>　[<%= stock.amount %>kg/m<sup>2</sup>/回]</td>
+          <td><%= stock.applicable_area %>　[<%= stock.amount %>kg/m<sup>2</sup>]</td>
           <td><%= stock.standard.name %></td>
           <td><%= stock.remarks %></td>
         </tr>
