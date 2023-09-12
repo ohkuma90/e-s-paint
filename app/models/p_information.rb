@@ -1,0 +1,2 @@
+class PInformation < ApplicationRecord
+end

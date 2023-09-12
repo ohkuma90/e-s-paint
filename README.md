@@ -60,12 +60,12 @@ Things you may want to cover:
 
 ## p_information テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| p_name           | string  | null: false |
-| category         | string  | null: false |
-| amount           | integer | null: false |
-| standard         | integer | null: false |
+| Column      | Type    | Options     |
+| ----------- | ------- | ----------- |
+| p_name      | string  | null: false |
+| category_id | string  | null: false |
+| amount      | integer | null: false |
+| standard_id | integer | null: false |
 
 ### Association
 
