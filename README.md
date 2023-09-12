@@ -36,7 +36,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :stocks
-
+- has_many :p_information
 
 ## stocksテーブル
 
@@ -70,3 +70,4 @@ Things you may want to cover:
 ### Association
 
 - has_many :stocks
+- belongs_to :user
