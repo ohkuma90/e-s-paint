@@ -56,7 +56,13 @@ RSpec.describe Stock, type: :model do
       it 'remaining_in_canが文字列では保存できない' do
         @stock.remaining_in_can = 'aaaaa'
         @stock.valid?
-        expect(@stock.errors.full_messages).to include("Remaining in can should be a number")
+        expect(@stock.errors.full_messages).to include("Remaining in can is not a number")
+      end
+
+      it 'remaining_in_canが全角数字では保存できない' do
+        @stock.remaining_in_can = '１１．５'
+        @stock.valid?
+        expect(@stock.errors.full_messages).to include("Remaining in can is not a number")
       end
 
       it 'amountが空では保存できない' do
@@ -68,7 +74,13 @@ RSpec.describe Stock, type: :model do
       it 'amountが文字列では保存できない' do
         @stock.amount = 'aaaaa'
         @stock.valid?
-        expect(@stock.errors.full_messages).to include("Amount should be a number")
+        expect(@stock.errors.full_messages).to include("Amount is not a number")
+      end
+
+      it 'amountが全角数字では保存できない' do
+        @stock.amount = '１１．５'
+        @stock.valid?
+        expect(@stock.errors.full_messages).to include("Amount is not a number")
       end
 
       it 'standard_idが空では保存できない' do

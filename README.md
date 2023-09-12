@@ -46,8 +46,8 @@ Things you may want to cover:
 | category_id      | integer    | null: false                    |
 | color            | string     |                                |
 | gloss            | string     |                                |
-| remaining_in_can | integer    | null: false                    |
-| amount           | integer    | null: false                    |
+| remaining_in_can | float      | null: false                    |
+| amount           | float      | null: false                    |
 | standard_id      | integer    | null: false                    |
 | remarks          | text       |                                |
 | user             | references | null: false, foreign_key: true |

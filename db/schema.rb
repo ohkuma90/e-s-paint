@@ -16,8 +16,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_013840) do
     t.integer "category_id", null: false
     t.string "color"
     t.string "gloss"
-    t.integer "remaining_in_can", null: false
-    t.integer "amount", null: false
+    t.float "remaining_in_can", null: false
+    t.float "amount", null: false
     t.integer "standard_id", null: false
     t.text "remarks"
     t.bigint "user_id", null: false
