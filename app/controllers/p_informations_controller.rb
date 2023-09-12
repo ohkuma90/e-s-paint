@@ -1,0 +1,2 @@
+class PInformationsController < ApplicationController
+end
