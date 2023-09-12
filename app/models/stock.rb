@@ -1,5 +1,7 @@
 class Stock < ApplicationRecord
   belongs_to :user
+  belongs_to :p_information
+  
   # 仮想属性の追加
   attr_accessor :remaining, :applicable_area
 
