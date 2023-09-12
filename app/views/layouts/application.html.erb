@@ -21,20 +21,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <% if user_signed_in? %>
-              <li class="nav-item">
+              <li class="nav-stock">
                 <h3 class="nav-link mt-1"><%= current_user.name %>でログイン中</h3>
               </li>
-              <li class="nav-item">
+              <li class="nav-stock">
                 <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link"%>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">在庫追加</a>
+              <li class="nav-stock">
+                <%= link_to "在庫追加", new_stock_path, class: "nav-link" %>
               </li>
             <% else %>
-              <li class="nav-item">
+              <li class="nav-stock">
                 <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
               </li>
-              <li class="nav-item">
+              <li class="nav-stock">
                 <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
               </li>
             <% end %>

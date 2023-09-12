@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_09_074210) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_013840) do
+  create_table "stocks", charset: "utf8", force: :cascade do |t|
+    t.string "p_name", null: false
+    t.integer "category_id", null: false
+    t.string "color"
+    t.string "gloss"
+    t.float "remaining_in_can", null: false
+    t.float "amount", null: false
+    t.integer "standard_id", null: false
+    t.text "remarks"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stocks_on_user_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -24,4 +39,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_074210) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stocks", "users"
 end
