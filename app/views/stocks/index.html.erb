@@ -16,7 +16,7 @@
     <tbody>
       <% @stocks.each do |stock| %>
         <tr>
-          <th scope="row"><%= stock.p_name %></th>
+          <th scope="row"><%= link_to stock.p_name, edit_stock_path(stock.id), class: "nav-link" %></th>
           <td><%= stock.created_at.to_date %></td>
           <td><%= stock.category.name %></td>
           <td><%= stock.color %></td>
