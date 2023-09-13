@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3">
           <p class="form-label"> カテゴリー <span class="text-danger">(必須)</span></p>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown"}) %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown1"}) %>
         </div>
         <div class="mb-3">
           <p class="form-label"> 色相 </p>
@@ -36,7 +36,7 @@
         </div>
         <div class="mb-3">
           <p class="form-label">規格 <span class="text-danger">(必須)</span></p>
-          <%= f.collection_select(:standard_id, Standard.all, :id, :name, {}, {class:"form-control", id:"dropdown"}) %>
+          <%= f.collection_select(:standard_id, Standard.all, :id, :name, {}, {class:"form-control", id:"dropdown2"}) %>
         </div>
         <div class="mb-3">
           <p class="form-label"> 備考 </p>
