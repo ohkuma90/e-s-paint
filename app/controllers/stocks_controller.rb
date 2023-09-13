@@ -11,12 +11,14 @@ class StocksController < ApplicationController
   
   def new
     @stock = Stock.new
-    @p_informations = PInformation.includes(:user)
+    p_informations = PInformation.includes(:user)
+    @p_informations = current_user.p_informations
   end
 
   def create
     @stock = Stock.new(stock_params)
-    @p_informations = PInformation.includes(:user)
+    p_informations = PInformation.includes(:user)
+    @p_informations = current_user.p_informations
     if @stock.save
       redirect_to root_path
     else
