@@ -1,7 +1,8 @@
 <div class="container mt-3 mb-3">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h2>在庫追加</h2>
+      <%= link_to 'この在庫情報を削除', stock_path(@stock.id), data: { turbo_method: :delete }, class: "d-btn btn btn-primary", id:"d-btn"%>
+      <h2>在庫更新</h2>
       <%= form_with model: @stock, data:{turbo: false}, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object, locals: { message: @message } %>
         <div class="mb-3">
@@ -36,7 +37,7 @@
           <p class="form-label"> 備考 </p>
           <%= f.text_field :remarks, class: "form-control", placeholder: "例)〇〇様邸使用予定" %>
         </div>
-        <%= f.submit "追加する", class: "btn btn-primary" %>
+        <%= f.submit "更新する", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
