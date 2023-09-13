@@ -16,6 +16,7 @@ class StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
+    @p_informations = PInformation.includes(:user)
     if @stock.save
       redirect_to root_path
     else

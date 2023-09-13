@@ -13,6 +13,13 @@ class PInformationsController < ApplicationController
     end
   end
 
+  def show
+    @p_information = PInformation.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @p_information }
+    end
+  end
+
   private
 
   def p_information_params
