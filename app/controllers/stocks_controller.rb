@@ -1,6 +1,7 @@
 class StocksController < ApplicationController
 
   def index
+    stocks = Stock.includes(:user)
     @stocks = current_user.stocks
     @stocks.each do |stock|
       stock.remaining = (stock.remaining_in_can - 1.14).round(2)
@@ -10,10 +11,14 @@ class StocksController < ApplicationController
   
   def new
     @stock = Stock.new
+    p_informations = PInformation.includes(:user)
+    @p_informations = current_user.p_informations
   end
 
   def create
     @stock = Stock.new(stock_params)
+    p_informations = PInformation.includes(:user)
+    @p_informations = current_user.p_informations
     if @stock.save
       redirect_to root_path
     else

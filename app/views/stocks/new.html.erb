@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <h2>在庫追加</h2>
+      <select id="pInformationSelect">
+      <option value="">製品を選択してください</option>
+      <% @p_informations.each do |p_information| %>
+        <option value="<%= p_information.id %>"><%= p_information.p_name %></option>
+      <% end %>
+    </select>
       <%= form_with model: @stock, data:{turbo: false}, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object, locals: { message: @message } %>
         <div class="mb-3">
@@ -10,7 +16,7 @@
         </div>
         <div class="mb-3">
           <p class="form-label"> カテゴリー <span class="text-danger">(必須)</span></p>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown"}) %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"dropdown1"}) %>
         </div>
         <div class="mb-3">
           <p class="form-label"> 色相 </p>
@@ -30,7 +36,7 @@
         </div>
         <div class="mb-3">
           <p class="form-label">規格 <span class="text-danger">(必須)</span></p>
-          <%= f.collection_select(:standard_id, Standard.all, :id, :name, {}, {class:"form-control", id:"dropdown"}) %>
+          <%= f.collection_select(:standard_id, Standard.all, :id, :name, {}, {class:"form-control", id:"dropdown2"}) %>
         </div>
         <div class="mb-3">
           <p class="form-label"> 備考 </p>
