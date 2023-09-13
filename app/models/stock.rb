@@ -13,6 +13,15 @@ class Stock < ApplicationRecord
     validates :standard_id, numericality: { other_than: 1, message: "can't be blank" }
   end
 
+  def self.search(search, user_id)
+    if search.present?
+      Stock.where('p_name LIKE(?) OR color LIKE(?)', "%#{search}%", "%#{search}%").where(user_id: user_id)
+    else
+      Stock.where(user_id: user_id)
+    end
+  end
+
+
   # アクティブハッシュのアソシエーション
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
