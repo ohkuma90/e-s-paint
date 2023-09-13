@@ -6,6 +6,7 @@ class StocksController < ApplicationController
     stocks = Stock.includes(:user)
     @stocks = current_user.stocks
     @stocks.each do |stock|
+      # 缶の重量1.14kg（一斗缶の重量JIS規格）を除く
       stock.remaining = (stock.remaining_in_can - 1.14).round(2)
       stock.applicable_area = (stock.remaining / stock.amount).round(2)
     end
