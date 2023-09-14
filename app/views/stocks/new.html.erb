@@ -7,7 +7,7 @@
       <% @p_informations.each do |p_information| %>
         <option value="<%= p_information.id %>"><%= p_information.p_name %></option>
       <% end %>
-    </select>
+      </select>
       <%= form_with model: @stock, data:{turbo: false}, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object, locals: { message: @message } %>
         <div class="mb-3">
