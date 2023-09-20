@@ -1,7 +1,7 @@
 <div class="container mt-3 mb-3">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h2>在庫追加</h2>
+      <h2>製品情報追加</h2>
       <%= form_with model: @p_information, data:{turbo: false}, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object, locals: { message: @message } %>
         <div class="mb-3">
