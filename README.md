@@ -79,7 +79,7 @@ https://docs.google.com/spreadsheets/d/1EJIv2Ru2mFMoq4uq9tEyHYcQ3jmQezP7EPWPx2kD
 
 # ローカルでの動作方法
 以下のコマンドを順に実行<br>
-% git clone <br>
+% git clone https://github.com/ohkuma90/e-s-paint.git<br>
 % cd e-s-paint<br>
 % bundle install<br>
 % yarn install<br>
