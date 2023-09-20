@@ -67,7 +67,7 @@ https://docs.google.com/spreadsheets/d/1EJIv2Ru2mFMoq4uq9tEyHYcQ3jmQezP7EPWPx2kD
 [![Image from Gyazo](https://i.gyazo.com/254c08b5b3408821e5df6a20dddd8a38.png)](https://gyazo.com/254c08b5b3408821e5df6a20dddd8a38)
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/5d5c9317aad1601a0be036b6140a1369.png)](https://gyazo.com/5d5c9317aad1601a0be036b6140a1369)
+[![Image from Gyazo](https://i.gyazo.com/f61c6b4b893898bda352aefbb74f482e.png)](https://gyazo.com/f61c6b4b893898bda352aefbb74f482e)
 
 # 開発環境
 ・フロントエンド：HTML、CSS、JavaScript、Bootstrap<br>
